@@ -1,5 +1,15 @@
-.navbar {
+.navbar, .sidebar{
     background-color: #002336;
+}
+
+.sidebar{
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar hr {
+    color: white;
+    opacity: 3;
 }
 
 .btn {
