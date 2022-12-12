@@ -1,15 +1,6 @@
-.navbar, .sidebar{
+.navbar,
+.sidebar {
     background-color: #002336;
-}
-
-.sidebar{
-    height: 100%;
-    position: fixed;
-}
-
-.sidebar hr {
-    color: white;
-    opacity: 3;
 }
 
 .btn {
@@ -19,8 +10,20 @@
     font-size: 12px;
 }
 
-.navbar-brand {
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 }
