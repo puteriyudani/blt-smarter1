@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Masyarakat</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
+
+    <!-- CSS -->
+    <style>
+        label {
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- svg -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="edit" viewBox="0 0 16 16">
+            <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+            <path fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+        </symbol>
+        <symbol id="delete" viewBox="0 0 16 16">
+            <path
+                d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+        </symbol>
+        <symbol id="add" viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+        </symbol>
+    </svg>
+
+    <main class="masyarakat col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 me-3">Tambah Data Masyarakat</h1>
+        </div>
+        <div class="row g-3 mb-2 align-items-center">
+            <div class="col-2">
+                <label for="inputNIK" class="col-form-label">NIK</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputNIK" class="form-control" aria-describedby="NIKHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 mb-2 align-items-center">
+            <div class="col-2">
+                <label for="inputNama" class="col-form-label">Nama</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputNama" class="form-control" aria-describedby="NamaHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 mb-2 align-items-center">
+            <div class="col-2">
+                <label for="inputJenisKelamin" class="col-form-label">Jenis Kelamin</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputJenisKelamin" class="form-control" aria-describedby="JenisKelaminHelpInline">
+            </div>
+        </div>
+        <div class="row g-3 mb-2 align-items-center">
+            <div class="col-2">
+                <label for="inputAlamat" class="col-form-label">Alamat</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="inputAlamat" class="form-control" aria-describedby="AlamatHelpInline">
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary">Simpan</button>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

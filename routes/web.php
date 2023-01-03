@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\UserController;
+use App\Models\Masyarakat;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +18,17 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', ['title' => 'Home']);
-})->name('home');
+Route::get('/', [UserController::class, 'login'])->name('login');
 
+Route::get('beranda', [BerandaController::class, 'index'])->name('beranda');
+
+// user
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register', [UserController::class, 'register_action'])->name('register.action');
-Route::get('login', [UserController::class, 'login'])->name('login');
 Route::post('login', [UserController::class, 'login_action'])->name('login.action');
 Route::get('password', [UserController::class, 'password'])->name('password');
 Route::post('password', [UserController::class, 'password_action'])->name('password.action');
 Route::get('logout', [UserController::class, 'logout'])->name('logout');
+
+// masyarakat
+Route::resource('masyarakats', MasyarakatController::class);
