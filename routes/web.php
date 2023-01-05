@@ -1,11 +1,14 @@
 <?php
 
-use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\MasyarakatController;
+use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\SubkriteriaController;
 use App\Http\Controllers\UserController;
 use App\Models\Masyarakat;
+use App\Models\Kriteria;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +35,7 @@ Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 // masyarakat
 Route::resource('masyarakats', MasyarakatController::class);
+
+//kriteria
+Route::resource('kriterias', KriteriaController::class);
+Route::resource('subkriterias', SubkriteriaController::class);

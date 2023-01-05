@@ -169,11 +169,19 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">
+                            <a href="{{ route('kriterias.index') }}" class="nav-link text-white">
                                 <svg class="bi pe-none me-2" width="16" height="16">
                                     <use xlink:href="#kriteria" />
                                 </svg>
                                 Kriteria
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('subkriterias.index') }}" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16">
+                                    <use xlink:href="#kriteria" />
+                                </svg>
+                                Sub Kriteria
                             </a>
                         </li>
 

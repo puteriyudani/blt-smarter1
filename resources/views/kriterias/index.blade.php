@@ -20,8 +20,8 @@
     </svg>
 
     <div class="d-flex flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 me-3">Data Masyarakat</h1>
-        <a href="{{ route('masyarakats.create') }}">
+        <h1 class="h2 me-3">Data Kriteria</h1>
+        <a href="{{ route('kriterias.create') }}">
             <svg class="bi pe-none mt-2" width="30" height="22" style="fill: green;">
                 <use xlink:href="#add" />
             </svg>
@@ -38,24 +38,20 @@
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">NIK</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Jenis Kelamin</th>
-                    <th scope="col">Alamat</th>
+                    <th scope="col">Nama Kriteria</th>
+                    <th scope="col">Prioritas</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($masyarakats as $masyarakat)
+                @foreach ($kriterias as $kriteria)
                     <tr>
                         <td>{{ ++$i }}</td>
-                        <td>{{ $masyarakat->NIK }}</td>
-                        <td>{{ $masyarakat->nama }}</td>
-                        <td>{{ $masyarakat->jenis_kelamin }}</td>
-                        <td>{{ $masyarakat->alamat }}</td>
+                        <td>{{ $kriteria->nama }}</td>
+                        <td>{{ $kriteria->prioritas }}</td>
                         <td>
-                            <form action="{{ route('masyarakats.destroy', $masyarakat->id) }}" method="POST">
-                                <a href="{{ route('masyarakats.edit', $masyarakat->id) }}" style="text-decoration: none;">
+                            <form action="{{ route('kriterias.destroy', $kriteria->id) }}" method="POST">
+                                <a href="{{ route('kriterias.edit', $kriteria->id) }}" style="text-decoration: none;">
                                     <svg class="bi pe-none" width="20" height="16" style="fill: yellow;">
                                         <use xlink:href="#edit" />
                                     </svg>
@@ -77,7 +73,7 @@
         </table>
     </div>
 
-    {!! $masyarakats->links() !!}
+    {!! $kriterias->links() !!}
 @endsection
 
 @push('css')

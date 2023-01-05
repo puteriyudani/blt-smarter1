@@ -11,6 +11,11 @@
                 <p>Data Masyarakat</p>
             </a>
 
+            <a href="{{ route('kriterias.index') }}" class="btn btn-warning btn-lg px-4 me-3">
+                <h2>{{ $kriterias }}</h2>
+                <p>Data Kriteria</p>
+            </a>
+
             <a href="#" class="btn btn-success btn-lg px-4">
                 <h2>20</h2>
                 <p>Data Penerima BLT</p>
