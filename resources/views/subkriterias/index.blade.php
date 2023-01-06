@@ -49,7 +49,7 @@
                     <tr>
                         <td>{{ ++$i }}</td>
                         <td>{{ $subkriteria->nama }}</td>
-                        <td>{{ $subkriteria->kriteria_id }}</td>
+                        <td>{{ $subkriteria->kriteria->nama }}</td>
                         <td>{{ $subkriteria->prioritas }}</td>
                         <td>
                             <form action="{{ route('subkriterias.destroy', $subkriteria->id) }}" method="POST">

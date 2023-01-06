@@ -165,7 +165,7 @@
                                 <svg class="bi pe-none me-2" width="16" height="16">
                                     <use xlink:href="#persyaratan" />
                                 </svg>
-                                Persyaratan
+                                Alternatif
                             </a>
                         </li>
                         <li class="nav-item">

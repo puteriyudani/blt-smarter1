@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subkriterias', function (Blueprint $table) {
+        Schema::create('kriterias', function (Blueprint $table) {
             $table->id();
-            $table->string('kriteria_id');
             $table->string('nama');
-            $table->string('prioritas');
+            $table->integer('prioritas');
+            $table->float('bobot');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subkriterias');
+        Schema::dropIfExists('kriterias');
     }
 };

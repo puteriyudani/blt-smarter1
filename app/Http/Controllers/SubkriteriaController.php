@@ -15,8 +15,7 @@ class SubkriteriaController extends Controller
      */
     public function index()
     {
-        $subkriterias = Subkriteria::with('kriteria')->get();
-        $subkriterias = Subkriteria::latest()->paginate(5);
+        $subkriterias = Subkriteria::with('kriteria')->latest()->paginate(5);
         return view('subkriterias.index', compact('subkriterias'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

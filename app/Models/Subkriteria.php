@@ -11,8 +11,8 @@ class Subkriteria extends Model
 
     protected $fillable = ['nama', 'kriteria_id', 'prioritas'];
 
-    public function Kriteria()
+    public function kriteria()
     {
-        return $this->hasMany(Kriteria::class);
+        return $this->belongsTo(Kriteria::class);
     }
 }
