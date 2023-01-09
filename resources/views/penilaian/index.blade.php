@@ -21,22 +21,22 @@
             <thead>
                 <tr>
                     <th scope="col">Nama Masyarakat</th>
-                    @foreach ($kriteria as $key => $value)
+                    @foreach ($kriterias as $kriteria => $value)
                         <th>{{ $value->nama }}</th>
                     @endforeach
                 </tr>
             </thead>
             <tbody>
-                @forelse ($masyarakat as $alt => $valt)
+                @forelse ($masyarakats as $masyarakat => $valt)
                     <tr>
                         <td>{{ $valt->nama }}</td>
                         @if (count($valt->penilaian) > 0)
                         
                         @else
-                            @foreach ($kriteria as $key => $value)
+                            @foreach ($kriterias as $kriteria)
                                 <td>
                                     <select name="subkriteria_id[]" class="form-control">
-                                        @foreach ($value->subkriteria as $k_1 => $v_1)
+                                        @foreach ($kriteria->subkriterias as $k_1 => $v_1)
                                             <option value="{{ $v_1->id }}">
                                                 {{ $v_1->nama }}</option>
                                         @endforeach
