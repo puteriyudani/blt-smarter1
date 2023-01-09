@@ -88,7 +88,7 @@
             <path
                 d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
         </symbol>
-        <symbol id="persyaratan" viewBox="0 0 16 16">
+        <symbol id="penilaian" viewBox="0 0 16 16">
             <path
                 d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z" />
         </symbol>
@@ -161,11 +161,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-white">
+                            <a href="{{ route('penilaian.index') }}" class="nav-link text-white">
                                 <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#persyaratan" />
+                                    <use xlink:href="#penilaian" />
                                 </svg>
-                                Alternatif
+                                Penilaian
                             </a>
                         </li>
                         <li class="nav-item">

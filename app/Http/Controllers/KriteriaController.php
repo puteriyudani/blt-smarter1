@@ -14,7 +14,7 @@ class KriteriaController extends Controller
      */
     public function index()
     {
-        $kriterias = Kriteria::latest()->paginate(5);
+        $kriterias = Kriteria::latest()->paginate(7);
     
         return view('kriterias.index', compact('kriterias'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
