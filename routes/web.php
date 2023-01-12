@@ -36,7 +36,7 @@ Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
 // masyarakat
 Route::resource('masyarakats', MasyarakatController::class);
-Route::get('penilaian', [PenilaianController::class, 'index'])->name('penilaian.index');
+Route::resource('penilaian', PenilaianController::class);
 
 //kriteria
 Route::resource('kriterias', KriteriaController::class);

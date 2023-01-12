@@ -77,7 +77,7 @@
         </table>
     </div>
 
-    {!! $masyarakats->links() !!}
+    {{-- {!! $masyarakats->links() !!} --}}
 @endsection
 
 @push('css')

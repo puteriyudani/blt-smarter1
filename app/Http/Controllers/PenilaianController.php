@@ -2,89 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\Penilaian;
 use App\Models\Masyarakat;
 use App\Models\Kriteria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class PenilaianController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $masyarakats = Masyarakat::with('penilaian.subkriteria')->get();
         $kriterias = Kriteria::with('subkriterias')->orderBy('nama', 'ASC')->get();
-        // dd($kriteria[0]->subkriterias);
+        // return response()->json($masyarakats);
         return view('penilaian.index', compact('masyarakats', 'kriterias'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        // return response()->json($request);
+        try {
+            DB::select("TRUNCATE penilaian");
+            foreach($request->subkriteria_id as $key => $value) {
+                foreach($value as $key_1 => $value_1) {
+                    Penilaian::create([
+                        'masyarakat_id' => $key,
+                        'subkriteria_id' => $value_1
+                    ]);
+                }
+            }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+            return back()->with('msg', 'Berhasil disimpan');
+        } catch (Exception $e) {
+            Log::emergency("File:", [$e->getFile()], "Line:", [$e->getLine()], "Message:", [$e->getMessage()]);
+            die("Gagal");
+        }
     }
 }

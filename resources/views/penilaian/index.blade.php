@@ -15,7 +15,13 @@
         </div>
     @endif
 
-    <form action="" method="POST">
+    @if ($message = Session::get('msg'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
+
+    <form action="{{ route('penilaian.store') }}" method="POST">
         @csrf
         <table class="table table-striped table-sm">
             <thead>
@@ -29,14 +35,24 @@
             <tbody>
                 @forelse ($masyarakats as $masyarakat => $valt)
                     <tr>
+                        {{-- <input type="hidden" value="{{ $valt->id }}" name="masyarakat_id[]"> --}}
                         <td>{{ $valt->nama }}</td>
                         @if (count($valt->penilaian) > 0)
-                        
-                        @else
-                            @foreach ($kriterias as $kriteria)
+                            @foreach ($kriterias as $kriteria => $value)
                                 <td>
-                                    <select name="subkriteria_id[]" class="form-control">
-                                        @foreach ($kriteria->subkriterias as $k_1 => $v_1)
+                                    <select name="subkriteria_id[{{ $valt->id }}][]" class="form-control">
+                                        @foreach ($value->subkriterias as $k_1 => $v_1)
+                                            <option value="{{ $v_1->id }}" {{ $v_1->id == $valt->penilaian[$kriteria]->subkriteria_id ? 'selected' : '' }}>
+                                                {{ $v_1->nama }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                            @endforeach
+                        @else
+                            @foreach ($kriterias as $kriteria => $value)
+                                <td>
+                                    <select name="subkriteria_id[{{ $valt->id }}][]" class="form-control">
+                                        @foreach ($value->subkriterias as $k_1 => $v_1)
                                             <option value="{{ $v_1->id }}">
                                                 {{ $v_1->nama }}</option>
                                         @endforeach
